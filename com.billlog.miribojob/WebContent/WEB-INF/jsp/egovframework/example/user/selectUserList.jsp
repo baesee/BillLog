@@ -12,7 +12,7 @@
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-USER LIST
+USER LIST - 변경사항이 있습니다. 2016-12-05-15:20
 <table>
 	<colgroup>
 		<col width="20%"/>
