@@ -95,6 +95,7 @@ public class UserController {
 		model.addAttribute("paginationInfo", paginationInfo);
 		*/
 		
-		return "user/selectUserList";
+//		return "user/selectUserList";
+		return "main/main";
 	}
 }
