@@ -1,4 +1,4 @@
-package com.billlog.miribojob.service.impl;
+package com.billlog.miribojob.user.service.impl;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.billlog.miribojob.dao.UserDAO;
+import com.billlog.miribojob.user.dao.UserDAO;
 import com.billlog.miribojob.user.model.UserVO;
 import com.billlog.miribojob.user.service.IUserService;
 

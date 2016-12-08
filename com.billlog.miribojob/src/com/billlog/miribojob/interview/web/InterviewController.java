@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.billlog.miribojob.user.web;
+package com.billlog.miribojob.interview.web;
 
 import java.util.List;
 
@@ -57,10 +57,10 @@ import com.billlog.miribojob.user.service.IUserService;
  */
 
 @Controller
-public class UserController {
+public class InterviewController {
 
-	@Resource(name = "UserService")
-	private IUserService userService;
+//	@Resource(name = "UserService")
+//	private IUserService userService;
 	
 	/**
 	 * 글 목록을 조회한다. (pageing)
@@ -69,12 +69,15 @@ public class UserController {
 	 * @return "egovSampleList"
 	 * @exception Exception
 	 */
-	@RequestMapping(value = "/selectUserList.do")
-	public String selectUserList(ModelMap model) throws Exception {
+	@RequestMapping(value = "/selectInterviewList.do")
+	public String selectInterviewList(ModelMap model) throws Exception {
 		
+		System.err.println("/selectInterviewList.do comein");
+		
+		/*
 		List<UserVO> list = userService.selectUserList();
 		model.addAttribute("resultList", list);
-		/*
+		
 		searchVO.setPageUnit(propertiesService.getInt("pageUnit"));
 		searchVO.setPageSize(propertiesService.getInt("pageSize"));
 
@@ -96,6 +99,6 @@ public class UserController {
 		*/
 		
 //		return "user/selectUserList";
-		return "main/main";
+		return "interview/selectInterviewList";
 	}
 }

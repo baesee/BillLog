@@ -1,4 +1,4 @@
-package com.billlog.miribojob.dao;
+package com.billlog.miribojob.user.dao;
 
 import java.util.List;
 

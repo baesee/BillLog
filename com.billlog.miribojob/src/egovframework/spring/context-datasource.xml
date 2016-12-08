@@ -23,6 +23,9 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://umj64-006.cafe24.com/happy9485" />
+<!--    서버에 올려서는 아래의 URL(localhost)을 사용     
+		<property name="url" value="jdbc:mysql://localhost:3306/happy9485" /> 
+-->
         <property name="username" value="happy9485"/>
         <property name="password" value="tiajs123!"/>
     </bean>

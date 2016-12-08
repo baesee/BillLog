@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="ui"     uri="http://egovframework.gov/ctl/ui"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
 <!doctype html>
 <html>
@@ -22,11 +25,9 @@
 	}
 	.scene.one{
 	  background-image: url(images/egovframework/main/main_3.jpg);
-	  background-size : 100%;
 	}
 	.scene.two{
 	  background-image: url(images/egovframework/main/main_2.jpg);
-	  background-size : 100%;
 	}
 	.scene header{
 	  color:white;
@@ -60,6 +61,7 @@
 </script>
 <title>Miribo Job</title>
 </head>
+<link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
 <body>
 	<section class="scene one">
 		<header>
@@ -69,7 +71,7 @@
 	</section>
 	<section id = "mv" class="scene two">
 		<header>
-			<h1>여러 전문가들로부터 이야기를 들어볼 수 있습니다.</h1> <img alt="연봉 버튼" src="/images/egovframework/cmmn/btn_year_money.png" style="cursor: pointer"> / <img alt="인터뷰 버튼" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer">
+			<h1>여러 전문가들로부터 이야기를 들어볼 수 있습니다.</h1> <img alt="연봉 버튼" src="/images/egovframework/cmmn/btn_year_money.png" style="cursor: pointer"> / <a href = "<c:url value='/selectInterviewList.do'/>"><img alt="인터뷰 버튼" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer"></a> / <a href = "<c:url value='/admin_main.do'/>"><img alt="관리자페이지 임시" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer"></a>
 		</header>
 	</section>
 </body>
