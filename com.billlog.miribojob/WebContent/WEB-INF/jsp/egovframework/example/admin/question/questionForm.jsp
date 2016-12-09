@@ -34,10 +34,25 @@
     		padding-top:100px; 
     		background-color: #BDBDBD;
     	}
+    	
+    	#question_form{
+    		/*div screen 중앙정렬*/
+    		position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 730px;
+			height: 60%;
+			box-shadow : 12px 12px grey; /* 그림자 효과 */
+			background-color: #F5F5F5;
+    	}
     </style>
+    
 </head>
 
 <body>
-
+	<div id = "question_form">
+	
+	</div>
 </body>
 </html>
