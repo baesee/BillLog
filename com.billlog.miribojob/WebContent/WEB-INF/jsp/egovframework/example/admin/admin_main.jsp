@@ -30,7 +30,7 @@
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
 <h1>Admin Main Page</h1>
 	<center>
-		<a href = "/qusetionForm.do" >GGGGGGGOOOOOOOOO</a>
+		<a href = "/qusetionForm.do" >인터뷰 페이지 고</a>
 	</center>
 	
 	  

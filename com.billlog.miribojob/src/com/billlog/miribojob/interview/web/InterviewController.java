@@ -36,6 +36,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springmodules.validation.commons.DefaultBeanValidator;
 
+import com.billlog.miribojob.interview.model.InterviewVO;
+import com.billlog.miribojob.interview.service.IInterviewService;
 import com.billlog.miribojob.user.model.UserVO;
 import com.billlog.miribojob.user.service.IUserService;
 
@@ -59,8 +61,8 @@ import com.billlog.miribojob.user.service.IUserService;
 @Controller
 public class InterviewController {
 
-//	@Resource(name = "UserService")
-//	private IUserService userService;
+	@Resource(name = "InterviewService")
+	private IInterviewService interviewService;
 	
 	/**
 	 * 글 목록을 조회한다. (pageing)
@@ -100,5 +102,18 @@ public class InterviewController {
 		
 //		return "user/selectUserList";
 		return "interview/selectInterviewList";
+	}
+	
+	@RequestMapping(value = "/insertInterview.do")
+	public String insertInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
+		
+		System.err.println("/insertInterview.do comein");
+		/*
+		 * INSERT INTO tb_interview(iname,isex,ijob,ianswer1,ianswer2,ianswer3,ianswer4,ianswer5,ianswer6,ianswer7,ianswer8,ianswer9,ianswer10,content,ipwd,iyearmoney,ijobtime,iyearofjob,regdate,ijobcity)
+		 * VALUES('홍길동','m','의적','1','2','3','4','5','6','7','8','9','10','내요오옹','패스워드','연보옹','하루 근무시간','근속년수',now(),'16')
+		 */
+		interviewService.insertInterview(interviewVO);
+		
+		return "redirect:/main.do";
 	}
 }

@@ -25,6 +25,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><spring:message code="title.sample" /></title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     
     <style>
     	body{
@@ -48,11 +49,74 @@
     	}
     </style>
     
+    <script type="text/javascript">
+    var cnt = 0;
+    var size = "${list_size}";
+    $(document).ready(function(){
+    	$("#ul_0").show();
+    	$("#btn_submit").show();
+    	
+    	for(var i = 1 ; i <= size ; i++){
+   			$("#ul_"+i).hide();
+    	}
+    
+	    $("#btn_next").click(function(){
+	    	if(cnt >= size){
+	    		alert("마지막");
+	    	}else{
+	    		$("#ul_"+cnt).hide();
+				cnt = cnt+1;
+				$("#ul_"+cnt).show();
+				console.log(cnt);
+	    	}
+		});
+
+	    $("#btn_pre").click(function(){
+	    	if(cnt <= 0){
+	    		alert("처음");
+	    	}else{
+	    		$("#ul_"+cnt).hide();
+				cnt = cnt-1;
+				$("#ul_"+cnt).show();
+	    	}
+		});
+	    
+	    $("#btn_submit").click(function(){
+	        	document.interviewForm.action = "/insertInterview.do";
+	         	document.interviewForm.submit();
+	         	alert("참여해주셔서 감사합니다");
+		});
+    });
+    </script>
+    
 </head>
 
 <body>
-	<div id = "question_form">
-	
-	</div>
+
+	<form:form commandName="InterviewVO" method="POST" name = "interviewForm">
+		<div id = "question_form">
+		<h1 style="color: red;">완료버튼은 마지막에 누르세요! 아직 처리 안했습니다.</h1>
+			<ul id = "ul_0">
+				<li>성함 : <form:input path="iname" /> </li> 
+				<li>성별(라디오버튼) : <form:input path="isex" /> </li>
+				<li>직업명 : <form:input path="ijob" /> </li>
+				<li>근무지(셀럭트 광역시) : <form:input path="ijobcity" /></li>
+				<li>경력(년차)(라디오) : <form:input path="iyearofjob" /></li>
+				<li>연봉 (셀렉트): <form:input path="iyearmoney" /></li>
+				<li>하루 평균 근무시간(셀렉트) : <form:input path="ijobtime" /></li>
+			</ul>
+			<c:forEach items="${qList }" var="list" varStatus="status">
+				<ul style=" text-align: left; margin-left: 10px;" id = "ul_${status.count }">
+					<li>${list }</li>
+					<li><form:textarea path="ianswer${status.count }" rows="7" cols="80"></form:textarea></li>
+				</ul>
+			</c:forEach>
+			
+			<button id = "btn_pre" type = "button">이전</button>
+			<button id = "btn_next" type = "button">다음</button>
+			<button id = "btn_submit" type = "button">완료</button>			
+		</div>
+	</form:form>
 </body>
+
 </html>

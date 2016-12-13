@@ -50,6 +50,8 @@ public class InterviewVO  extends SampleDefaultVO{
 	private String ijobtime;
 	//인터뷰자 근속년수
 	private String iyearofjob;
+	//근무지(광역시 정도만)
+	private String ijobcity;
 	
 	public String getIidx() {
 		return iidx;
@@ -236,6 +238,18 @@ public class InterviewVO  extends SampleDefaultVO{
 	}
 	public void setIjobtime(String ijobtime) {
 		this.ijobtime = ijobtime;
+	}
+	public String getIyearofjob() {
+		return iyearofjob;
+	}
+	public void setIyearofjob(String iyearofjob) {
+		this.iyearofjob = iyearofjob;
+	}
+	public String getIjobcity() {
+		return ijobcity;
+	}
+	public void setIjobcity(String ijobcity) {
+		this.ijobcity = ijobcity;
 	}
 	
 }

@@ -69,6 +69,12 @@ public class AdminController {
 	 * @return "egovSampleList"
 	 * @exception Exception
 	 */
+	@RequestMapping(value = "/main.do")
+	public String Main(ModelMap model) throws Exception {
+		
+		return "main/main";
+	}
+	
 	@RequestMapping(value = "/admin_main.do")
 	public String adminMain(ModelMap model) throws Exception {
 		

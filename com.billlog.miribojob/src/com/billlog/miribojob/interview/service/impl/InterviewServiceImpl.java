@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.billlog.miribojob.interview.dao.InterviewDAO;
+import com.billlog.miribojob.interview.model.InterviewVO;
 import com.billlog.miribojob.interview.service.IInterviewService;
 import com.billlog.miribojob.user.dao.UserDAO;
 import com.billlog.miribojob.user.model.UserVO;
@@ -22,6 +23,10 @@ public class InterviewServiceImpl implements IInterviewService{
 	public List<InterviewDAO> selectInterviewList() throws Exception {
 		return null;
 //		return dao.selectUserList();
-		
+	}
+	
+	@Override
+	public void insertInterview(InterviewVO interviewVO) throws Exception {
+		dao.insertInterview(interviewVO);
 	}
 }

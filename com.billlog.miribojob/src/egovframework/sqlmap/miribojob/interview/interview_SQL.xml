@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Interview">
+	<typeAlias  alias="InterviewVO" type="com.billlog.miribojob.interview.model.InterviewVO"/>
+	
+	<insert id="Interview.insertInterview" parameterClass = "InterviewVO">
+		<![CDATA[
+			INSERT INTO tb_interview(iname,isex,ijob,ianswer1,ianswer2,ianswer3,ianswer4,ianswer5,ianswer6,ianswer7,ianswer8,ianswer9,ianswer10,content,ipwd,iyearmoney,ijobtime,iyearofjob,regdate,ijobcity)
+			VALUES(#iname#,#isex#,#ijob#,#ianswer1#,#ianswer2#,#ianswer3#,#ianswer4#,#ianswer5#,#ianswer6#,#ianswer7#,#ianswer8#,#ianswer9#,#ianswer10#,#content#,#ipwd#,#iyearmoney#,#ijobtime#,#iyearofjob#,now(),#ijobcity#)
+        ]]>
+	</insert>
+	
+</sqlMap>

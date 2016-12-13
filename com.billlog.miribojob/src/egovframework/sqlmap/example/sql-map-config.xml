@@ -3,5 +3,15 @@
 
 <sqlMapConfig>
 	<sqlMap resource="egovframework/sqlmap/example/sample/EgovSample_Sample_SQL.xml"/>
-	<sqlMap resource="egovframework/sqlmap/example/user/User_SQL.xml"/>
+	
+	<!-- 	
+	<sqlMap resource="egovframework/sqlmap/example/user/User_SQL.xml"/> 
+	<sqlMap resource="egovframework/sqlmap/example/question/Question_SQL.xml"/>
+	-->
+	
+	<sqlMap resource="egovframework/sqlmap/miribojob/user/User_SQL.xml"/>
+	<sqlMap resource="egovframework/sqlmap/miribojob/interview/interview_SQL.xml"/>
+	<sqlMap resource="egovframework/sqlmap/miribojob/question/Question_SQL.xml"/>
+	
+	
 </sqlMapConfig>

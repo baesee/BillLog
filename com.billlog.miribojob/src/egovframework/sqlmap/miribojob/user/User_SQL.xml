@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+	<typeAlias  alias="UserVO" type="com.billlog.miribojob.user.model.UserVO"/>
+	
+	<select id="User.selectUserList" resultClass="UserVO">
+        <![CDATA[
+            SELECT
+                *
+            FROM tb_user
+        ]]>
+    </select>
+	
+	
+</sqlMap>

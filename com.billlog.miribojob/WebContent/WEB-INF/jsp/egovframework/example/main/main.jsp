@@ -71,7 +71,7 @@
 	</section>
 	<section id = "mv" class="scene two">
 		<header>
-			<h1>여러 전문가들로부터 이야기를 들어볼 수 있습니다.</h1> <img alt="연봉 버튼" src="/images/egovframework/cmmn/btn_year_money.png" style="cursor: pointer"> / <a href = "<c:url value='/selectInterviewList.do'/>"><img alt="인터뷰 버튼" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer"></a> / <a href = "<c:url value='/admin_main.do'/>"><img alt="관리자페이지 임시" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer"></a>
+			<h1>여러 전문가들로부터 이야기를 들어볼 수 있습니다.</h1> <img alt="연봉 버튼" src="/images/egovframework/cmmn/btn_year_money.png" style="cursor: pointer"> / <a href = "<c:url value='/selectInterviewList.do'/>"><img alt="인터뷰 버튼" src="/images/egovframework/cmmn/btn_interview_mic.png" style="cursor: pointer"></a> / <a href = "<c:url value='/admin_main.do'/>"><img alt="관리자페이지" src="/images/egovframework/cmmn/admin.png" style="cursor: pointer"></a>
 		</header>
 	</section>
 </body>
