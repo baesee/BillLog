@@ -20,9 +20,8 @@ public class InterviewServiceImpl implements IInterviewService{
 	private InterviewDAO dao;
 	
 	@Override
-	public List<InterviewDAO> selectInterviewList() throws Exception {
-		return null;
-//		return dao.selectUserList();
+	public List<InterviewVO> selectInterviewList() throws Exception {
+		return dao.selectInterviewList();
 	}
 	
 	@Override

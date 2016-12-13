@@ -8,7 +8,7 @@ import com.billlog.miribojob.user.model.UserVO;
 
 
 public interface IInterviewService{
-	public List<InterviewDAO> selectInterviewList() throws Exception;
+	public List<InterviewVO> selectInterviewList() throws Exception;
 	
 	public void insertInterview(InterviewVO interviewVO) throws Exception;
 }

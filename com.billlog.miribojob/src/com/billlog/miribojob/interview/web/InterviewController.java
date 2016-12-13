@@ -72,33 +72,13 @@ public class InterviewController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/selectInterviewList.do")
-	public String selectInterviewList(ModelMap model) throws Exception {
+	public String selectInterviewList(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
 		
 		System.err.println("/selectInterviewList.do comein");
 		
-		/*
-		List<UserVO> list = userService.selectUserList();
-		model.addAttribute("resultList", list);
-		
-		searchVO.setPageUnit(propertiesService.getInt("pageUnit"));
-		searchVO.setPageSize(propertiesService.getInt("pageSize"));
+		List<InterviewVO> list = interviewService.selectInterviewList();
 
-		PaginationInfo paginationInfo = new PaginationInfo();
-		paginationInfo.setCurrentPageNo(searchVO.getPageIndex());
-		paginationInfo.setRecordCountPerPage(searchVO.getPageUnit());
-		paginationInfo.setPageSize(searchVO.getPageSize());
-
-		searchVO.setFirstIndex(paginationInfo.getFirstRecordIndex());
-		searchVO.setLastIndex(paginationInfo.getLastRecordIndex());
-		searchVO.setRecordCountPerPage(paginationInfo.getRecordCountPerPage());
-
-		List<?> sampleList = sampleService.selectSampleList(searchVO);
-		model.addAttribute("resultList", sampleList);
-
-		int totCnt = sampleService.selectSampleListTotCnt(searchVO);
-		paginationInfo.setTotalRecordCount(totCnt);
-		model.addAttribute("paginationInfo", paginationInfo);
-		*/
+		System.err.println("리스트 사이즈 : "+list.size());
 		
 //		return "user/selectUserList";
 		return "interview/selectInterviewList";

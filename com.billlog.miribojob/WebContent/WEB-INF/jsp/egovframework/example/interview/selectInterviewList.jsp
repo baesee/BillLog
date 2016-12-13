@@ -25,108 +25,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>InterView</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
-    <!-- JUI CHART -->
-    <script src="../lib/jquery-1.8.0.min.js"></script>
-    <script src="/js/jui/lib/core.js"></script>
-    <script src="/js/jui/dist/chart.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <style type="text/css">
+    	div.graph {width: 100%; height: 30px; position: relative; background-color: #adb4b7;}
+		div.graph_percent {width: 0; height: 100%; background-color: #3972a4;}
+		div.graph_count {height: 100%; line-height: 30px; position: absolute; right: 15px; top: 0; color: #fff; font-size: 13px;}
+    </style>
 </head>
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
 	
-	
-		<div style="width: 330px; height: 180px; border : 1px solid red; ">
-			<table border = "1" width="100%"> 
-				<tr>
-					<td>1</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>4</td>
-				</tr>
-				
-			</table>
-		    <div id="chart" style="width: 100%; height: 100%; border : 1px solid blue;" ></div>
-		</div>
+	<div class="graph" data-percent="99">
+		<div class="graph_percent"></div>
+		<div class="graph_count">${Statistics.COUNT}</div>
+	</div>
 	
 	
-	
-<script>
-var chart = jui.include("chart.builder");
-var data = [
-    { quarter : "경력", sales : 3 },
-    { quarter : "만족도", sales : 23 },
-    { quarter : "근무시간", sales : 10 },
-    { quarter : "연봉", sales : 22 }
-];
-chart("#chart", {
-    axis : [{
-        x : {
-            type : "range",
-//             domain : "sales",
-			domain : [0,100],
-            step : 5,
-            line : true
-        },
-        y : {
-            type : "block",
-            domain : "quarter",
-            line : true
-        },
-        data : data
-    }],
-    brush : [{
-        type : "focus",
-        start : 4,
-        end : 4
-    }, {
-        type : "bar",
-        target : "sales",
-        display : "max",
-        active : 5,
-        activeEvent : "mouseover",
-        animate : true
-    }],
-    widget : [{
-        type : "title",
-        text : "간단보기",
-        align : "start"
-    }]
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.graph').each(function(){
+		$(this).find('.graph_percent').animate({
+			width: $(this).attr('data-percent')
+		}, 1000);
+	});
 });
-
 </script>
-
-
 </body>
 </html>
