@@ -77,8 +77,8 @@ public class InterviewController {
 		System.err.println("/selectInterviewList.do comein");
 		
 		List<InterviewVO> list = interviewService.selectInterviewList();
-
-		System.err.println("리스트 사이즈 : "+list.size());
+		
+		model.addAttribute("interviewList", list);
 		
 //		return "user/selectUserList";
 		return "interview/selectInterviewList";

@@ -3,6 +3,7 @@
 <%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="ui"     uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%
   /**
   * @Class Name : egovSampleList.jsp
@@ -25,29 +26,63 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>InterView</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
+    <link type="text/css" rel="stylesheet" href="<c:url value='/css/chart/chart.css'/>"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <style type="text/css">
-    	div.graph {width: 100%; height: 30px; position: relative; background-color: #adb4b7;}
-		div.graph_percent {width: 0; height: 100%; background-color: #3972a4;}
-		div.graph_count {height: 100%; line-height: 30px; position: absolute; right: 15px; top: 0; color: #fff; font-size: 13px;}
-    </style>
 </head>
-<body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-	
-	<div class="graph" data-percent="99">
-		<div class="graph_percent"></div>
-		<div class="graph_count">${Statistics.COUNT}</div>
+<body style="margin:0 auto; display:inline; padding-top:50px;">
+<%@ include file="/WEB-INF/jsp/egovframework/example/cmmnframe/frame_top.jsp" %>
+<c:forEach items="${interviewList }" var="list">
+	<c:choose>
+		<c:when test="${fn:length(list.iname) eq 5}">
+			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }***${fn:substring(list.iname,4,5) }"></c:set>		
+		</c:when>
+		<c:when test="${fn:length(list.iname) eq 4}">
+			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }**${fn:substring(list.iname,3,4) }"></c:set>		
+		</c:when>
+		<c:when test="${fn:length(list.iname) eq 3}">
+			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }*${fn:substring(list.iname,2,3) }"></c:set>		
+		</c:when>
+		<c:when test="${fn:length(list.iname) eq 2}">
+			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }*"></c:set>		
+		</c:when>
+		<c:otherwise>
+			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }****"></c:set>
+		</c:otherwise>
+	</c:choose>
+
+	<div id = "content1" style =" width: /*@post-width:280=*/ 1280px /*@*/; margin: 0 auto;">
+		<div id = "interview_box" style = "width : 30%; margin-left: 13px; margin-left : 13px; float : left;">
+			<span style = "font-style: bold; color : gray; font-size: 25px;">${list.ijob}</span>(${edit_name })
+			<div id = "interviw_chr">
+				<div class="skillbar clearfix " data-percent="${list.iyearofjob*10 }%">
+					<div class="skillbar-title" ><span>경력!</span></div>
+					<div class="skillbar-bar" style="background: #e67e22;"></div>
+					<div class="skill-bar-percent">${list.iyearofjob }년</div>
+				</div> <!-- End Skill Bar -->
+				
+				<div class="skillbar clearfix " data-percent="${list.imanjokdo }%">
+					<div class="skillbar-title" ><span>만족도</span></div>
+					<div class="skillbar-bar" style="background: #3498db;"></div>
+					<div class="skill-bar-percent">${list.imanjokdo }%</div>
+				</div> <!-- End Skill Bar -->
+				
+				<div class="skillbar clearfix " data-percent="${list.ijobtime }%">
+					<div class="skillbar-title" ><span>근무시간</span></div>
+					<div class="skillbar-bar" style="background: #2c3e50;"></div>
+					<div class="skill-bar-percent">${list.ijobtime }%</div>
+				</div> <!-- End Skill Bar -->
+				
+				<div class="skillbar clearfix " data-percent="${list.iyearmoney }%">
+					<div class="skillbar-title" ><span>연봉</span></div>
+					<div class="skillbar-bar" style="background: #5a68a5;"></div>
+					<div class="skill-bar-percent">${list.iyearmoney }%</div>
+				</div> <!-- End Skill Bar -->
+			</div>
+		</div>
 	</div>
+</c:forEach>
 	
-	
-<script type="text/javascript">
-$(document).ready(function(){
-	$('.graph').each(function(){
-		$(this).find('.graph_percent').animate({
-			width: $(this).attr('data-percent')
-		}, 1000);
-	});
-});
-</script>
+
+<script type="text/javascript" src="/js/chart/chart.js"></script>
 </body>
 </html>
