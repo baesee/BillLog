@@ -71,9 +71,16 @@ public class AdminController {
 	 */
 	@RequestMapping(value = "/main.do")
 	public String Main(ModelMap model) throws Exception {
-		
+		System.err.println("MAIN COME IN");
 		return "main/main";
 	}
+	
+	@RequestMapping(value = "/test.do")
+	public String csstest(ModelMap model) throws Exception {
+		System.err.println("CSS TEST PAGE COME IN");
+		return "test/test";
+	}
+	
 	
 	@RequestMapping(value = "/admin_main.do")
 	public String adminMain(ModelMap model) throws Exception {

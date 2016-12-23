@@ -84,6 +84,21 @@ public class InterviewController {
 		return "interview/selectInterviewList";
 	}
 	
+	/**
+	 * 글 목록을 조회한다. (pageing)
+	 * @param searchVO - 조회할 정보가 담긴 SampleDefaultVO
+	 * @param model
+	 * @return "egovSampleList"
+	 * @exception Exception
+	 */
+	@RequestMapping(value = "/detailInterview.do")
+	public String detailInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
+		
+		System.err.println("/detailInterview.do comein");
+		
+		return "interview/detailInterview";
+	}
+	
 	@RequestMapping(value = "/insertInterview.do")
 	public String insertInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
 		

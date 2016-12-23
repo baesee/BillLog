@@ -8,6 +8,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="og:title" content="MIRIBOJOB"/>
+<meta property="og:url" content="http://happy9485.cafe24.com/"/>
+<meta property="og:image" content="http://gs.saro.me/gs/og-image.png"/>
+<meta property="og:description" content="미리보잡(JOB)"/>
 <link rel="stylesheet" href="css/egovframework/reset.css">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>

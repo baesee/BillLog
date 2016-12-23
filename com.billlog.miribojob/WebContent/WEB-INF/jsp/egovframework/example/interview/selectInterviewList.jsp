@@ -27,6 +27,9 @@
     <title>InterView</title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/chart/chart.css'/>"/>
+    <link rel="stylesheet" href="css/hover/style.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/hover/common.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/hover/thirdeffect.css" type="text/css" media="screen"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body style="margin:0 auto; display:inline; padding-top:50px;">
@@ -51,37 +54,42 @@
 	</c:choose>
 
 	<div id = "content1" style =" width: /*@post-width:280=*/ 1280px /*@*/; margin: 0 auto;">
-		<div id = "interview_box" style = "width : 30%; margin-left: 13px; margin-left : 13px; float : left;">
-			<span style = "font-style: bold; color : gray; font-size: 25px;">${list.ijob}</span>(${edit_name })
-			<div id = "interviw_chr">
-				<div class="skillbar clearfix " data-percent="${list.iyearofjob*10 }%">
-					<div class="skillbar-title" ><span>경력!</span></div>
-					<div class="skillbar-bar" style="background: #e67e22;"></div>
-					<div class="skill-bar-percent">${list.iyearofjob }년</div>
-				</div> <!-- End Skill Bar -->
+		<div class="view third-effect" style = "width : 30%; margin-left: 13px; margin-left : 13px; float : left;">
+			<div id = "interview_box" align="left">
+				<span style = "font-style: bold; color : gray; font-size: 25px;">${list.ijob}</span>(${edit_name })
+				<div id = "interviw_chr">
+					<div class="skillbar clearfix " data-percent="${list.iyearofjob*10 }%">
+						<div class="skillbar-title" ><span>경력</span></div>
+						<div class="skillbar-bar" style="background: #e67e22;"></div>
+						<div class="skill-bar-percent">${list.iyearofjob }년</div>
+					</div> <!-- End Skill Bar -->
+					
+					<div class="skillbar clearfix " data-percent="${list.imanjokdo }%">
+						<div class="skillbar-title" ><span>만족도</span></div>
+						<div class="skillbar-bar" style="background: #3498db;"></div>
+						<div class="skill-bar-percent">${list.imanjokdo }%</div>
+					</div> <!-- End Skill Bar -->
+					
+					<div class="skillbar clearfix " data-percent="${list.ijobtime }%">
+						<div class="skillbar-title" ><span>근무시간</span></div>
+						<div class="skillbar-bar" style="background: #2c3e50;"></div>
+						<div class="skill-bar-percent">${list.ijobtime }%</div>
+					</div> <!-- End Skill Bar -->
+					
+					<div class="skillbar clearfix " data-percent="${list.iyearmoney }%">
+						<div class="skillbar-title" ><span>연봉</span></div>
+						<div class="skillbar-bar" style="background: #5a68a5;"></div>
+						<div class="skill-bar-percent">${list.iyearmoney }%</div>
+					</div> <!-- End Skill Bar -->
+				</div>
 				
-				<div class="skillbar clearfix " data-percent="${list.imanjokdo }%">
-					<div class="skillbar-title" ><span>만족도</span></div>
-					<div class="skillbar-bar" style="background: #3498db;"></div>
-					<div class="skill-bar-percent">${list.imanjokdo }%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="${list.ijobtime }%">
-					<div class="skillbar-title" ><span>근무시간</span></div>
-					<div class="skillbar-bar" style="background: #2c3e50;"></div>
-					<div class="skill-bar-percent">${list.ijobtime }%</div>
-				</div> <!-- End Skill Bar -->
-				
-				<div class="skillbar clearfix " data-percent="${list.iyearmoney }%">
-					<div class="skillbar-title" ><span>연봉</span></div>
-					<div class="skillbar-bar" style="background: #5a68a5;"></div>
-					<div class="skill-bar-percent">${list.iyearmoney }%</div>
-				</div> <!-- End Skill Bar -->
+				<div class="mask">
+					<a href="<c:url value = 'detailInterview.do'/>" class="info">Read More</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </c:forEach>
-	
 
 <script type="text/javascript" src="/js/chart/chart.js"></script>
 </body>
