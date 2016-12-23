@@ -93,8 +93,9 @@ public class InterviewController {
 	 */
 	@RequestMapping(value = "/detailInterview.do")
 	public String detailInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
-		
 		System.err.println("/detailInterview.do comein");
+		
+		
 		
 		return "interview/detailInterview";
 	}

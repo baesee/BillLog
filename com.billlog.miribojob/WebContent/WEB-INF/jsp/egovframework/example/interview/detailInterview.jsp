@@ -7,6 +7,6 @@
 <title>상세보기 페이지</title>
 </head>
 <body>
-인터뷰 상세보기 
+상세보기 
 </body>
 </html>
