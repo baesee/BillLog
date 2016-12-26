@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2009 the original author or authors.
+d * Copyright 2008-2009 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,9 @@
  */
 package com.billlog.miribojob.interview.web;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import egovframework.example.sample.service.EgovSampleService;
 import egovframework.example.sample.service.SampleDefaultVO;
@@ -38,6 +40,8 @@ import org.springmodules.validation.commons.DefaultBeanValidator;
 
 import com.billlog.miribojob.interview.model.InterviewVO;
 import com.billlog.miribojob.interview.service.IInterviewService;
+import com.billlog.miribojob.question.model.QuestionVO;
+import com.billlog.miribojob.question.service.IQuestionService;
 import com.billlog.miribojob.user.model.UserVO;
 import com.billlog.miribojob.user.service.IUserService;
 
@@ -63,6 +67,9 @@ public class InterviewController {
 
 	@Resource(name = "InterviewService")
 	private IInterviewService interviewService;
+	
+	@Resource(name = "QuestionService")
+	private IQuestionService questionService;
 	
 	/**
 	 * 글 목록을 조회한다. (pageing)
@@ -92,10 +99,19 @@ public class InterviewController {
 	 * @exception Exception
 	 */
 	@RequestMapping(value = "/detailInterview.do")
-	public String detailInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
-		System.err.println("/detailInterview.do comein");
+	public String detailInterview(@ModelAttribute("interviewVO") InterviewVO interviewVO,@ModelAttribute("questionVO") QuestionVO questionVO, ModelMap model, @RequestParam(value="iname", required=false) String iname, @RequestParam(value="iidx", required=false) String iidx) throws Exception {
 		
+		System.err.println("/detailInterview.do comein , prameter [ iidx : [ "+iidx+" ]");
+		String q_code = "1";
+		Map<String, Object> paramMap = new HashMap<String,Object>();
 		
+		paramMap.put("iidx", iidx);
+		
+		interviewVO = interviewService.detailInterview(paramMap);
+		questionVO = questionService.selectQuestion(q_code);
+
+		model.addAttribute("detailInterview", interviewVO);
+		model.addAttribute("question", questionVO);
 		
 		return "interview/detailInterview";
 	}

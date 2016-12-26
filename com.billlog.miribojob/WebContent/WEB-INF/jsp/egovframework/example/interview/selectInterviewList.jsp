@@ -84,7 +84,7 @@
 				</div>
 				
 				<div class="mask">
-					<a href="<c:url value = 'detailInterview.do'/>" class="info">Read More</a>
+					<a href="<c:url value = 'detailInterview.do?iidx=${list.iidx }'/>" class="info">Read More</a>
 				</div>
 			</div>
 		</div>

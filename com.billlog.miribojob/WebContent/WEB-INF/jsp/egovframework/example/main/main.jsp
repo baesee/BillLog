@@ -44,7 +44,7 @@
 	  text-align: center;
 	}
 	.scene header h1{
-	  font-size:2rem;
+	  font-size:2rem;	
 	  margin-bottom: 1rem;
 	  font-weight: 300;
 	}

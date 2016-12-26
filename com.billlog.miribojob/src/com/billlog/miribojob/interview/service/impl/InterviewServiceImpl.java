@@ -1,6 +1,7 @@
 package com.billlog.miribojob.interview.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -27,5 +28,10 @@ public class InterviewServiceImpl implements IInterviewService{
 	@Override
 	public void insertInterview(InterviewVO interviewVO) throws Exception {
 		dao.insertInterview(interviewVO);
+	}
+	
+	@Override
+	public InterviewVO detailInterview(Map paramMap) throws Exception {
+		return dao.detailInterview(paramMap);
 	}
 }

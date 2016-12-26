@@ -1,6 +1,7 @@
 package com.billlog.miribojob.interview.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +21,10 @@ public class InterviewDAO extends EgovAbstractDAO {
 	
 	public void insertInterview(InterviewVO interviewVO) throws Exception{
 		insert("Interview.insertInterview", interviewVO);
+	}
+	
+	public InterviewVO detailInterview(Map paramMap) throws Exception{
+		return (InterviewVO) select("Interview.detailInterview", paramMap); 
 	}
 	
 }
