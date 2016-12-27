@@ -2620,7 +2620,7 @@ jui.define("chart.theme.jennifer", [], function() {
 
     return {
         fontFamily : "arial,Tahoma,verdana",
-    	backgroundColor : "#fff",
+//    	backgroundColor : "red",
         colors : themeColors,
 
         // Axis styles
@@ -2976,7 +2976,7 @@ jui.define("chart.theme.gradient", [], function() {
     ];
 
     return {
-        backgroundColor : "#fff",
+//        backgroundColor : "blue",
         fontFamily : "arial,Tahoma,verdana",
         colors : themeColors,
 
@@ -3331,7 +3331,7 @@ jui.define("chart.theme.dark", [], function() {
 
     return {
         fontFamily : "arial,Tahoma,verdana",
-    	backgroundColor : "#222222",
+//    	backgroundColor : "#222222",
         colors : themeColors,
 
         // Axis styles
@@ -3683,7 +3683,7 @@ jui.define("chart.theme.pastel", [], function() {
 
 	return {
 		fontFamily : "Caslon540BT-Regular,Times,New Roman,serif",
-		backgroundColor : "#fff",
+//		backgroundColor : "green",
 		colors : themeColors,
 
 		// Axis styles
@@ -4034,7 +4034,7 @@ jui.define("chart.theme.pattern", [], function() {
 
     return {
         fontFamily : "arial,Tahoma,verdana",
-        backgroundColor : "#fff",
+//        backgroundColor : "gray",
         colors : themeColors,
 
         // Axis styles

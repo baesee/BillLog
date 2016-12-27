@@ -69,7 +69,7 @@
 <body>
 	<section class="scene one">
 		<header>
-			<h1>우리는 당신에게 여쭈고싶습니다.</h1> 당신은 어떤일을 하는지, 어떤노력을 하였는지, 지금 어떠한 삶을 사는지 묻고 싶습니다.
+			<h1>우리는 당신에게 묻고싶습니다.</h1> 당신은 어떤일을 하는지, 어떤노력을 하였는지, 지금 어떠한 삶을 사는지 묻고 싶습니다.
 			<br/><br/><img alt="섹션 이동버튼" src="/images/egovframework/cmmn/btn_page_down_arrow.png" onclick="fnMove()" style="cursor: pointer">
 		</header>
 	</section>

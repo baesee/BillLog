@@ -109,7 +109,7 @@ public class InterviewController {
 		
 		interviewVO = interviewService.detailInterview(paramMap);
 		questionVO = questionService.selectQuestion(q_code);
-
+		
 		model.addAttribute("detailInterview", interviewVO);
 		model.addAttribute("question", questionVO);
 		
