@@ -27,4 +27,13 @@ public class InterviewDAO extends EgovAbstractDAO {
 		return (InterviewVO) select("Interview.detailInterview", paramMap); 
 	}
 	
+	public int getInterviewTatalCnt() throws Exception {
+		return (int) select("Interview.selectInterviewTotalCnt");
+		
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<InterviewVO> selectFastUpdateInterviewList() throws Exception {
+		return (List<InterviewVO>) list("Interview.selectFastUpdateInterviewList");
+	}
 }

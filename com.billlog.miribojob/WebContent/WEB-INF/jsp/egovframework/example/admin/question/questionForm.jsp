@@ -26,26 +26,21 @@
     <title><spring:message code="title.sample" /></title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    
     <style>
-    	body{
-    		text-align:center;
-    		margin:0 auto; 
-    		display:inline; 
-    		padding-top:100px; 
-    		background-color: #BDBDBD;
-    	}
-    	
     	#question_form{
     		/*div screen 중앙정렬*/
+    		
     		position: absolute;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			width: 730px;
 			height: 60%;
-			box-shadow : 12px 12px grey; /* 그림자 효과 */
-			background-color: #F5F5F5;
+			box-shadow : 12px 12px black; /* 그림자 효과 */
+			background-color: rgba(0,0,0,0.5);
+    	}
+    	ul{
+    		list-style:none;
     	}
     </style>
     
@@ -88,12 +83,12 @@
 		});
     });
     </script>
-    
 </head>
 
 <body>
-
-	<form:form commandName="InterviewVO" method="POST" name = "interviewForm">
+	<%@ include file="/WEB-INF/jsp/egovframework/example/admin/admin_main_frm.jsp" %>
+	<div id = "admin_content_box">
+		<form:form commandName="InterviewVO" method="POST" name = "interviewForm">
 		<div id = "question_form">
 		<h1 style="color: red;">완료버튼은 마지막에 누르세요! 아직 처리 안했습니다.</h1>
 			<ul id = "ul_0">
@@ -112,11 +107,13 @@
 				</ul>
 			</c:forEach>
 			
-			<button id = "btn_pre" type = "button">이전</button>
-			<button id = "btn_next" type = "button">다음</button>
-			<button id = "btn_submit" type = "button">완료</button>			
+			<button id = "btn_pre" type = "button" style="color: black">이전</button>
+			<button id = "btn_next" type = "button" style="color: black">다음</button>
+			<button id = "btn_submit" type = "button" style="color: black">완료</button>			
 		</div>
 	</form:form>
+	</div> 
+	
 </body>
 
 </html>

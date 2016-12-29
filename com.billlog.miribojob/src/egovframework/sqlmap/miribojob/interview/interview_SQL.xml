@@ -22,4 +22,18 @@
         ]]>
 	</insert>
 	
+	<!-- 총 인터뷰 개수 -->
+	<select id = "Interview.selectInterviewTotalCnt" resultClass = "java.lang.Integer">
+		select count(*) from tb_interview
+	</select>
+	
+	<!-- 가장 최근 등록된 인터뷰 5개 가져오기 -->
+	<!-- 이건 쿼리좀 바꿔야함 -->
+	<select id = "Interview.selectFastUpdateInterviewList" resultClass = "InterviewVO">
+		select * from tb_interview 
+		ORDER BY regdate desc
+		limit 0,5
+	</select>
+	
+
 </sqlMap>

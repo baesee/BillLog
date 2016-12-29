@@ -20,4 +20,10 @@ public class UserServiceImpl implements IUserService{
 	public List<UserVO> selectUserList() throws Exception {
 		return dao.selectUserList();
 	}
+	
+	@Override
+	public int getUserCount(int user_role) throws Exception {
+		// role마다 사용자의 수를 가져온다
+		return dao.getUserCount(user_role);
+	}
 }

@@ -14,4 +14,9 @@ public interface IInterviewService{
 	public void insertInterview(InterviewVO interviewVO) throws Exception;
 	
 	public InterviewVO detailInterview(Map paramMap) throws Exception;
-}
+	
+	public int getInterviewTatalCnt() throws Exception;
+	
+	//가장 최근에 등록된 인터뷰글 5개 가져오기
+	public List<InterviewVO> selectFastUpdateInterviewList() throws Exception;
+}						     

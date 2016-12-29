@@ -12,5 +12,9 @@
         ]]>
     </select>
 	
-	
+	<select id="User.selectUserTotalCnt" resultClass="int" parameterClass="java.lang.Integer">
+            SELECT COUNT(*) FROM tb_user
+            WHERE 1=1
+            AND user_role = #user_role#
+    </select>
 </sqlMap>

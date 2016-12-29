@@ -34,4 +34,15 @@ public class InterviewServiceImpl implements IInterviewService{
 	public InterviewVO detailInterview(Map paramMap) throws Exception {
 		return dao.detailInterview(paramMap);
 	}
+	
+	@Override
+	public int getInterviewTatalCnt() throws Exception {
+		return dao.getInterviewTatalCnt();
+	}
+	
+	@Override
+	public List<InterviewVO> selectFastUpdateInterviewList() throws Exception {
+		// 가장 최근에 등록된 인터뷰 5가지
+		return dao.selectFastUpdateInterviewList();
+	}
 }
