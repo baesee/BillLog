@@ -49,7 +49,8 @@
 	}
 	
 	#admin_menu_box{
-		position:absolute;	
+		top:45px;
+ 		position:absolute;	 
 		width : 190px;
 		z-index: 9999;
 		float: left;
@@ -72,7 +73,6 @@
 	
 	#admin_menu{
 		color: white;
-		
 	}
 	#miribojob_logo{
 		width: 190px;
@@ -85,21 +85,21 @@
 	}
 	
 	#admin_content_box{
- 		border : 1px solid blue; 
+/*    		border : 1px solid blue;    */
  		box-sizing: border-box; 
- 		width: 100%;
- 		padding-left: 190px;
- 		padding-top: 45px;
+/*  		width: 100%; */
+  		padding-left: 190px; 
+/*  		padding-top: 45px; */
  		color: white;
  		overflow: hidden;
- 		word-wrap: break-word;
+ 		word-wrap: break-word; /* 텍스트 줄 바꿈*/
 	}
     </style>
     <script type="text/javascript">
   	 $(document).ready(function(){
-		$('#admin_menu').css('height', $(window).height() - 55 );
+		$('#admin_menu').css('height', $(window).height() - 45 );
 		$(window).resize(function() {
-		    	$('#admin_menu').css('height', $(window).height() - 55 );
+		    	$('#admin_menu').css('height', $(window).height() - 45 );
 		});
 	}); 
 </script>
@@ -149,7 +149,6 @@
 		</section>
 	</div>
 	<div id = "admin_content_box">
-	<p style="size: 25px;">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
 		<table border="1" width="100%">
 			<tr>
 				<td>11111111111</td>
