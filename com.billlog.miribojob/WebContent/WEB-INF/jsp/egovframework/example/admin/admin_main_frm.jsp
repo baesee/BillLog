@@ -77,7 +77,7 @@
 	        		</a>
 	        		<ul class="sidebar-submenu">
 	        			<li><a href="/qusetionForm.do"><i class="fa fa-circle-o"></i> Question</a></li>
-	        			<li><a href="#"><i class="fa fa-circle-o"></i> Answer</a></li>
+	        			<li><a href="/interviewAnswer.do"><i class="fa fa-circle-o"></i> Answer</a></li>
 	      			</ul>
 	      		</li>
 	      		<li>

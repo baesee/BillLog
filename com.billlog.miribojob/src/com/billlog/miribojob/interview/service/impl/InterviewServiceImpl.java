@@ -45,4 +45,9 @@ public class InterviewServiceImpl implements IInterviewService{
 		// 가장 최근에 등록된 인터뷰 5가지
 		return dao.selectFastUpdateInterviewList();
 	}
+	
+	@Override
+	public void deleteInterview(InterviewVO interviewVO) throws Exception {
+		dao.deleteInterview(interviewVO);
+	}
 }

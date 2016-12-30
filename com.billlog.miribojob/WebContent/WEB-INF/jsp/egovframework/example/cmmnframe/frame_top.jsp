@@ -9,11 +9,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/cmmn/top.css'/>"/>
 </head>
 
-<body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
+<body>
     <div id = "frm_top"> 상단 </div>
 </body>
 </html>

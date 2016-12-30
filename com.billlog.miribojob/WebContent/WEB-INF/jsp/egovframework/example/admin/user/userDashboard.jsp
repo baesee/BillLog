@@ -56,7 +56,7 @@
 					<c:when test="${not empty resultList }">
 						<c:forEach var="list" items="${resultList}" varStatus="status">
 							<tr>
-								<td>${status.index}</td>
+								<td>${status.count}</td>
 		 						<td>${list.user_id}</td> 
 								<td>${list.user_nm}</td>
 								<td>${list.last_login_date}</td>

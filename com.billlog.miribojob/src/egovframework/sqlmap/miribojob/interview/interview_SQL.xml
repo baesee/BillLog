@@ -27,6 +27,10 @@
 		select count(*) from tb_interview
 	</select>
 	
+	<delete id = "Interview.deleteInterview" parameterClass = "InterviewVO">
+		DELETE FROM tb_interview WHERE iidx = #iidx#
+	</delete>
+	
 	<!-- 가장 최근 등록된 인터뷰 5개 가져오기 -->
 	<!-- 이건 쿼리좀 바꿔야함 -->
 	<select id = "Interview.selectFastUpdateInterviewList" resultClass = "InterviewVO">

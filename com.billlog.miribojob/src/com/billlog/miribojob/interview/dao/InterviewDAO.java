@@ -36,4 +36,8 @@ public class InterviewDAO extends EgovAbstractDAO {
 	public List<InterviewVO> selectFastUpdateInterviewList() throws Exception {
 		return (List<InterviewVO>) list("Interview.selectFastUpdateInterviewList");
 	}
+	
+	public void deleteInterview(InterviewVO interviewVO) throws Exception{
+		delete("Interview.deleteInterview", interviewVO);
+	}
 }

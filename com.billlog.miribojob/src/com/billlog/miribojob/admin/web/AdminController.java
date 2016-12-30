@@ -112,9 +112,28 @@ public class AdminController {
 		return "admin/interviewDashboard/interviewDashboard";
 	}
 	
+	@RequestMapping(value = "/interviewAnswer.do")
+	public String interviewAnswer(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
+		System.err.println("interviewAnswer.do COME IN");
+		
+		List<InterviewVO> list = interviewService.selectInterviewList();
+		
+		model.addAttribute("answerList", list);
+		
+		return "admin/interviewDashboard/interviewAnswer";
+	}
+	
+	@RequestMapping(value = "/deleteAnswer.do")
+	public String deleteAnswer(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model ) throws Exception {
+		System.err.println("deleteAnswer.do COME IN");
+		
+		interviewService.deleteInterview(interviewVO);
+		
+		return "redirect:/interviewAnswer.do";
+	}
 	
 	@RequestMapping(value = "/admin_main.do")
-	public String adminMain(QuestionVO questionVo, InterviewVO interviewvo, ModelMap model) throws Exception {
+	public String adminMain(@ModelAttribute("interviewVO") InterviewVO interviewVO, QuestionVO questionVo,  ModelMap model) throws Exception {
 		System.err.println("admin_main.do COME IN");
 		
 		//가장 최근 등록된 인터뷰 5가지 가져오기
