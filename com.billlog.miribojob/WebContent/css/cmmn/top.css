@@ -1,8 +1,39 @@
 @CHARSET "UTF-8";
 
 #frm_top{
+	position : fixed;
+	top : 0 auto;
 	width: 100%;
-	height: 200px;
-	border : 1px solid black;
-	text-align: center;		
+	height: 50px;
+/* 	border : 1px solid black; */
+	background-color: #F6F6F6;
+	z-index: 99999;
+}
+
+.frm_top_menu ul li{
+	display:inline-block; 			        /*  세로나열을 가로나열로 변경 */
+/*  	border-left:1px solid #999; 		각 메뉴의 왼쪽에 "|" 표시(분류 표시) */
+	font:bold 14px Dotum; 			/* 폰트 설정 - 12px의 돋움체 굵은 글씨로 표시 */
+	padding:0 10px; 				/* 각 메뉴 간격 */
+	color: black;	
+	line-height: 50px;
+	vertical-align: middle;
+}
+.frm_top_menu{
+	boder : 1px solid #999;
+	padding-left: 200px;
+}
+.frm_top_menu ul li:HOVER {
+	border-bottom : 1px solid #FF9595;
+	cursor: pointer;
+}
+
+.frm_top_logo{
+	float : left;
+	padding-left: 150px;
+	height: 100%;
+	line-height: 50px;
+	font-size: 23px;
+	font-weight: bold;
+	font-family: sans-serif;
 }

@@ -30,20 +30,18 @@
 	<%@ include file="/WEB-INF/jsp/egovframework/example/admin/admin_main_frm.jsp" %>
 	<div id = "admin_content_box" >
 		<p style="size: 33px; color: white;">메인 DASH BOADRD</p>
-		<div id = "user_dash_box" style="width: 30%; height: 300px; float: left; border : 1px solid red; margin-left: 20px;">
-			관리자 수 : ${adminUserCnt} <br/>
-			인터뷰어 수  : ${interviewerCnt} <br/>
-			일반유저 수 : ${ilbanUserCnt} <br/>
-			차트로 구현예정 
+		<div id = "user_dash_box" style="width: 30%; height: 420px; float: left; border : 1px solid red; margin-left: 20px;" align="center">
+			USER
+			<div id="user_piechart"></div>
 		</div>
-		<div id = "questiondash_box" style="width: 30%; height: 300px; float: left; border : 1px solid yellow; margin-left: 20px;">
+		<div id = "questiondash_box" style="width: 30%; height: 420px; float: left; border : 1px solid yellow; margin-left: 20px;">
 			현재 사용중인 질문 수 : ${list_size }<br/>
 			▶ 현재 질문 목록<br/>
 			<c:forEach var="list" items="${qList }">
 				&nbsp;&nbsp;${list }<br/>
 			</c:forEach>
 		</div>
-		<div id = "interview_dash_box" style="width: 30%; height: 300px; float: left; border : 1px solid green; margin-left: 20px;">
+		<div id = "interview_dash_box" style="width: 30%; height: 420px; float: left; border : 1px solid green; margin-left: 20px;">
 			현재 등록된 인터뷰 수 : ${interviewTotalCnt }<br/>
 			최근 등록된 인터뷰 5가지 직업<br/>
 			<c:forEach var="list" items="${fastUpdateList }">
@@ -51,5 +49,45 @@
 			</c:forEach>
 		</div>
 	</div> 
+	
+	<script type="text/javascript" src="/js/jui/lib/core.js"></script>
+	<script type="text/javascript" src="/js/jui/dist/chart.js"></script>
+	<script type="text/javascript">
+	var admincnt = "<c:out value = '${adminUserCnt}'/>";
+	var interviewercnt = "<c:out value = '${interviewerCnt}'/>";
+	var ilbanusercnt = "<c:out value = '${ilbanUserCnt}'/>";
+	
+	
+	jui.ready([ "chart.builder" ], function(chart) {
+
+        c = chart("#user_piechart", {
+            //padding: 100,
+            width: 400,
+            height : 400,
+            theme : "jennifer",
+            axis : {
+                data: []
+            },
+            brush : [{
+                type : "donut",
+                showText : "outside",
+                size : 30,
+//                 active : [ "red" ],
+                activeEvent : "click",
+                showValue : true
+            }],
+            widget : [{
+                type : "tooltip"
+            }, {
+                type : "legend"
+            }]
+        });
+
+        setTimeout(function() {
+            c.axis(0).update([ { admin : parseInt(admincnt), interviewer:  parseInt(interviewercnt), user: parseInt(ilbanusercnt) } ]);
+            c.render(true);
+        }, 300);
+    })
+	</script>
 </body>
 </html>

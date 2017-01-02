@@ -37,16 +37,27 @@
 			box-shadow : 10px 10px rgba(30,30,30,0.8); /* 그림자 효과 */
 			background-color: rgba(0,0,0,0.5);
     	}
+    	
+    	#btn_box{
+    		left : 40%;
+    		position: absolute;
+    		bottom : 20px;
+    	}
     	ul{
     		list-style:none;
     	}
-    	.invisible {		
-/*         clear: none; */
-/*         border: 1px none; */
-/*         float: none; */
-/*         background-color: #ffffff; */
-/*         background-color: transparent;  */
-}
+    	
+    	ul li{
+    		color: white;
+    	}
+    	
+    	.tbl_title{
+    		color: white;
+    	}
+    	
+   		#ul_0{
+   			
+   		}
     </style>
     
     <script type="text/javascript">
@@ -70,6 +81,7 @@
 				console.log(cnt);
 	    	}
 	    	if(cnt==size){
+	    		$("#btn_next").hide();
 		    	$("#btn_submit").show();
 		    }else{
 		    	$("#btn_submit").hide();
@@ -87,14 +99,19 @@
 	    	if(cnt==size){
 		    	$("#btn_submit").show();
 		    }else{
+		    	$("#btn_next").show();
 		    	$("#btn_submit").hide();
 		    }
 		});
 	    
 	    $("#btn_submit").click(function(){
-	        	document.interviewForm.action = "/insertInterview.do";
-	         	document.interviewForm.submit();
-	         	alert("참여해주셔서 감사합니다");
+	    		if(confirm("설문지 작성을 완료하셨습니까?")){
+	    			document.interviewForm.action = "/insertInterview.do";
+		         	document.interviewForm.submit();
+		         	alert("참여해주셔서 감사합니다");	
+	    		}else{
+	    			alert("취소하셨습니다.")
+	    		}
 		});
     });
     </script>
@@ -104,16 +121,35 @@
 	<%@ include file="/WEB-INF/jsp/egovframework/example/admin/admin_main_frm.jsp" %>
 	<div id = "admin_content_box">
 		<form:form commandName="InterviewVO" method="POST" name = "interviewForm">
-		<div id = "question_form" style="color: black;">
-			<ul id = "ul_0">
-				<li>이름  <form:input path="iname" /> </li> 
-				<li>성별  
-					<form:radiobutton path="isex" value = "m" label="남자"/>
-					<form:radiobutton path="isex" value = "f" label="여자"/>
-				 </li>
-				<li>직업명 : <form:input path="ijob" /> </li>
-				<li>근무지
-					<form:select path="ijobcity">
+		<div id = "question_form">
+			<table id = "ul_0" border="1" width="100%" style="color: black;">
+				<colgroup>
+					<col width="25%"/>
+					<col width="*"/>
+				</colgroup>
+				<tr>
+					<td class = "tbl_title">이름</td>
+					<td>
+						<form:input path="iname" />
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">성별</td>
+					<td class = "tbl_title">
+						<form:radiobutton path="isex" value = "m" label="남자"/>
+						<form:radiobutton path="isex" value = "f" label="여자"/>
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">직업명</td>
+					<td>
+						<form:input path="ijob" />
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">근무지</td>
+					<td>
+						<form:select path="ijobcity">
 						<form:option value="">선택</form:option>
 						<form:option value="서울특별시">서울특별시</form:option>
 						<form:option value="부산광역시">부산광역시</form:option>
@@ -134,21 +170,30 @@
 						<form:option value="경상남도">경상남도</form:option>
 						<form:option value="제주도">제주도</form:option>
 					</form:select>
-				</li>
-				<li>경력(년차)  
-					<form:radiobutton path="iyearofjob" value = "1" label="1년차 미만"/>
-					<form:radiobutton path="iyearofjob" value = "2" label="2년차"/>
-					<form:radiobutton path="iyearofjob" value = "3" label="3년차"/>
-					<form:radiobutton path="iyearofjob" value = "4" label="4년차"/>
-					<form:radiobutton path="iyearofjob" value = "5" label="5년차"/>
-					<form:radiobutton path="iyearofjob" value = "6" label="6년차"/>
-					<form:radiobutton path="iyearofjob" value = "7" label="7년차"/>
-					<form:radiobutton path="iyearofjob" value = "8" label="8년차"/>
-					<form:radiobutton path="iyearofjob" value = "9" label="9년차"/>
-					<form:radiobutton path="iyearofjob" value = "10" label="10년차 이상"/>
-				</li>
-				<li>연봉 
-					<form:select path="iyearmoney">
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">경력(년차)</td>
+					<td>
+						<form:select path="iyearofjob">
+						<form:option value="">선택</form:option>
+						<form:option value="1">1년차 미만</form:option>
+						<form:option value="2">2년차</form:option>
+						<form:option value="3">3년차</form:option>
+						<form:option value="4">4년차</form:option>
+						<form:option value="5">5년차</form:option>
+						<form:option value="6">6년차</form:option>
+						<form:option value="7">7년차</form:option>
+						<form:option value="8">8년차</form:option>
+						<form:option value="9">9년차</form:option>
+						<form:option value="10">10년차 이상</form:option>
+					</form:select>
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">연봉</td>
+					<td>
+						<form:select path="iyearmoney">
 						<form:option value="35">1500 미만</form:option>
 						<form:option value="40">1800</form:option>
 						<form:option value="45">2000</form:option>
@@ -163,9 +208,12 @@
 						<form:option value="90">4700</form:option>
 						<form:option value="95">5000 이상</form:option>
 					</form:select>
-				</li>
-				<li>하루 평균 근무시간 
-					<form:select path="ijobtime">
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">하루 평균 근무시간 </td>
+					<td>
+						<form:select path="ijobtime">
 						<form:option value="10">4시간 미만</form:option>
 						<form:option value="20">6시간</form:option>
 						<form:option value="30">7시간</form:option>
@@ -176,15 +224,26 @@
 						<form:option value="80">12시간</form:option>
 						<form:option value="95">13시간 이상</form:option>
 					</form:select>
-				</li>
-			</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class = "tbl_title">직업에 대한 만족도</td>
+					<td class = "tbl_title">
+						<form:radiobutton path="imanjokdo" value = "20" label="최하"/>
+						<form:radiobutton path="imanjokdo" value = "40" label="하"/>
+						<form:radiobutton path="imanjokdo" value = "60" label="중"/>
+						<form:radiobutton path="imanjokdo" value = "80" label="상"/>
+						<form:radiobutton path="imanjokdo" value = "100" label="최상"/>
+					</td>
+				</tr>
+			</table>
 			<c:forEach items="${qList }" var="list" varStatus="status">
 				<ul style=" text-align: left; margin-left: 10px;" id = "ul_${status.count }">
-					<li style = "color: white">${list }</li>
-					<li><form:textarea path="ianswer${status.count }" rows="7" cols="70"></form:textarea></li>
+					<li>${list }</li>
+					<li style = "color: black;"><form:textarea path="ianswer${status.count }" rows="7" cols="70"></form:textarea></li>
 				</ul>
 			</c:forEach>
-			<div align="center">
+			<div id = "btn_box">
 				<button id = "btn_pre" type = "button" style="color: black">이전</button>
 				<button id = "btn_next" type = "button" style="color: black">다음</button>
 				<button id = "btn_submit" type = "button" style="color: black">완료</button>

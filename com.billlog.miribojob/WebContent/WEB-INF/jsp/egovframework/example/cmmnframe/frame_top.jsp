@@ -13,6 +13,18 @@
 </head>
 
 <body>
-    <div id = "frm_top"> 상단 </div>
+    <div id = "frm_top"> 
+    	<div class = "frm_top_logo">
+    		MIRIBOJOB
+    	</div>
+    	<div class = "frm_top_menu">
+	    	<ul>
+	    		<li>신규</li>
+	    		<li>카테고리</li>
+	    		<li>더보기</li>
+	    		<li>연봉정보</li>
+	    	</ul>
+    	</div>
+    </div>
 </body>
 </html>

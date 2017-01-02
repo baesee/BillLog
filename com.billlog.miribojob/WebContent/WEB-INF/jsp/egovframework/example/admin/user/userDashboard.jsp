@@ -42,6 +42,7 @@
 				<col width="15%"/>
 				<col width="15%"/>
 				<col width="15%"/>
+				<col width="15%"/>
 				<col width="*"/>
 			</colgroup>
 			<tr>
@@ -50,6 +51,7 @@
 				<th>NAME</th>
 				<th>LoginDate</th>
 				<th>UserRole</th>
+				<th>Delete</th>
 			</tr> 
 			<tbody>
 				<c:choose>
@@ -72,7 +74,7 @@
 										<td>인터뷰어</td>
 									</c:otherwise>
 								</c:choose>
-								
+								<td>Delete</td>
 							</tr>
 						</c:forEach>
 					</c:when>

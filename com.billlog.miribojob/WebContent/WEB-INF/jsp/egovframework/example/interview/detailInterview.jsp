@@ -90,7 +90,7 @@
 	<div id = "head_box">
 			<span id = "jobname" >${detailInterview.ijob }</span>
 			<ul style="float: right;">
-				<li><img alt="뒤로가기" title="뒤로가기" src="/images/egovframework/interview/back_off.png" onmouseover="this.src='/images/egovframework/interview/back_on.png';" onmouseout="this.src='/images/egovframework/interview/back_off.png';" onclick="javscript:history.go(-1)"/></li>
+				<li><img alt="뒤로가기" title="뒤로가기" src="/images/egovframework/interview/back_off.png" onmouseover="this.src='/images/egovframework/interview/back_on.png';" onmouseout="this.src='/images/egovframework/interview/back_off.png';" onclick="location.href='/selectInterviewList.do'"/></li>
 				<li><img alt="아래로 스크롤"  title="아래로 스크롤" src="/images/egovframework/interview/down_off.png" onmouseover="this.src='/images/egovframework/interview/down_on.png';" onmouseout="this.src='/images/egovframework/interview/down_off.png';" onclick="fnMove()"/></li>
 				<li><img alt="홈" title="홈으로" src="/images/egovframework/interview/home_off.png" onmouseover="this.src='/images/egovframework/interview/home_on.png';" onmouseout="this.src='/images/egovframework/interview/home_off.png';" onclick="location.href='/main.do'" /></li>
 			</ul>

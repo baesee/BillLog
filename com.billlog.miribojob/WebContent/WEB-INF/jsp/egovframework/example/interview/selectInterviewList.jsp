@@ -34,6 +34,7 @@
 </head>
 <body style="margin:0 auto; display:inline; padding-top:50px;">
 <%@ include file="/WEB-INF/jsp/egovframework/example/cmmnframe/frame_top.jsp" %>
+<div id = "body_box" style = "margin-top: 70px;">
 <c:forEach items="${interviewList }" var="list">
 	<c:choose>
 		<c:when test="${fn:length(list.iname) eq 5}">
@@ -52,7 +53,6 @@
 			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }****"></c:set>
 		</c:otherwise>
 	</c:choose>
-
 	<div id = "content1" style =" width: /*@post-width:280=*/ 1280px /*@*/; margin: 0 auto;">
 		<div class="view third-effect" style = "width : 30%; margin-left: 13px; margin-left : 13px; float : left;">
 			<div id = "interview_box" align="left">
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 </c:forEach>
-
+</div>
 <script type="text/javascript" src="/js/chart/chart.js"></script>
 </body>
 </html>

@@ -17,8 +17,8 @@
 	<!-- 인터뷰 값 삽입 -->
 	<insert id="Interview.insertInterview" parameterClass = "InterviewVO">
 		<![CDATA[
-			INSERT INTO tb_interview(iname,isex,ijob,ianswer1,ianswer2,ianswer3,ianswer4,ianswer5,ianswer6,ianswer7,ianswer8,ianswer9,ianswer10,content,ipwd,iyearmoney,ijobtime,iyearofjob,regdate,ijobcity)
-			VALUES(#iname#,#isex#,#ijob#,#ianswer1#,#ianswer2#,#ianswer3#,#ianswer4#,#ianswer5#,#ianswer6#,#ianswer7#,#ianswer8#,#ianswer9#,#ianswer10#,#content#,#ipwd#,#iyearmoney#,#ijobtime#,#iyearofjob#,now(),#ijobcity#)
+			INSERT INTO tb_interview(iname,isex,ijob,ianswer1,ianswer2,ianswer3,ianswer4,ianswer5,ianswer6,ianswer7,ianswer8,ianswer9,ianswer10,content,ipwd,iyearmoney,ijobtime,iyearofjob,regdate,ijobcity,imanjokdo)
+			VALUES(#iname#,#isex#,#ijob#,#ianswer1#,#ianswer2#,#ianswer3#,#ianswer4#,#ianswer5#,#ianswer6#,#ianswer7#,#ianswer8#,#ianswer9#,#ianswer10#,#content#,#ipwd#,#iyearmoney#,#ijobtime#,#iyearofjob#,now(),#ijobcity#,#imanjokdo#)
         ]]>
 	</insert>
 	

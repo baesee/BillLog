@@ -64,7 +64,7 @@
 					<th>Job</th>
 					<th>WirteDate</th>
 					<th>Delete</th>
-					<th></th>
+					<th>View</th>
 				</tr> 
 				<tbody>
 					<c:choose>
@@ -74,7 +74,7 @@
 									<td>${status.count}</td>
 			 						<td>${list.iname}</td> 
 									<c:choose>
-										<c:when test="${list.isex eq m}">
+										<c:when test="${list.isex eq 'm'}">
 											<td>남자</td>
 										</c:when>
 										<c:otherwise>
@@ -84,7 +84,7 @@
 									<td>${list.ijob}</td>
 									<td>${list.regdate}</td>
 									<td onclick="fnDel('${list.iidx}')" style = "cursor: pointer;">Delete</td>
-									<td></td>
+									<td>View</td>
 								</tr>
 							</c:forEach>
 						</c:when>
