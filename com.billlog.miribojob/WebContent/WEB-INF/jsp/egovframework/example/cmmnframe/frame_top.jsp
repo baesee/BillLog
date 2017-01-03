@@ -19,10 +19,10 @@
     	</div>
     	<div class = "frm_top_menu">
 	    	<ul>
-	    		<li>신규</li>
-	    		<li>카테고리</li>
-	    		<li>더보기</li>
-	    		<li>연봉정보</li>
+	    		<li onclick="location.href='/selectInterviewList.do'">신규</li>
+	    		<li onclick="location.href='/interviewCategoryList.do'">카테고리</li>
+	    		<li onclick="location.href='/selectInterviewList.do'">더보기</li>
+	    		<li onclick="location.href='/interviewCategoryList.do'">연봉정보</li>
 	    	</ul>
     	</div>
     </div>

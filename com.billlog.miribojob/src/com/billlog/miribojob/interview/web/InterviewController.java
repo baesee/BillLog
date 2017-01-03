@@ -87,8 +87,17 @@ public class InterviewController {
 		
 		model.addAttribute("interviewList", list);
 		
-//		return "user/selectUserList";
 		return "interview/selectInterviewList";
+	}
+	
+	@RequestMapping(value = "/interviewCategoryList.do")
+	public String interviewCategoryList(@ModelAttribute("interviewVO") InterviewVO interviewVO, ModelMap model) throws Exception {
+		
+		System.err.println("/interviewCategoryList.do comein");
+		
+		
+		
+		return "interview/category/interviewCategoryList";
 	}
 	
 	/**

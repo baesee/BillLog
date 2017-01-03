@@ -56,6 +56,8 @@ public class InterviewVO  extends SampleDefaultVO{
 	private String imanjokdo;
 	//작성일자
 	private String regdate;
+	//근무중인 부서명
+	private String ijobdept;
 	
 	public String getIidx() {
 		return iidx;
@@ -266,6 +268,12 @@ public class InterviewVO  extends SampleDefaultVO{
 	}
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
+	}
+	public String getIjobdept() {
+		return ijobdept;
+	}
+	public void setIjobdept(String ijobdept) {
+		this.ijobdept = ijobdept;
 	}
 	
 }

@@ -31,6 +31,14 @@
 	<link rel="stylesheet" href="css/hover/common.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="css/hover/thirdeffect.css" type="text/css" media="screen"/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+     	html, body{
+    		width: 100%;
+    		height: 100%;
+    		margin: 0;
+    		padding: 0;
+    	}
+    </style>
 </head>
 <body style="margin:0 auto; display:inline; padding-top:50px;">
 <%@ include file="/WEB-INF/jsp/egovframework/example/cmmnframe/frame_top.jsp" %>
@@ -53,11 +61,11 @@
 			<c:set var = "edit_name" value = "${fn:substring(list.iname,0,1) }****"></c:set>
 		</c:otherwise>
 	</c:choose>
-	<div id = "content1" style =" width: /*@post-width:280=*/ 1280px /*@*/; margin: 0 auto;">
+	<div id = "content1" style ="width: 1280px; margin: 0 auto; color: white;" >
 		<div class="view third-effect" style = "width : 30%; margin-left: 13px; margin-left : 13px; float : left;">
-			<div id = "interview_box" align="left">
-				<span style = "font-style: bold; color : gray; font-size: 25px;">${list.ijob}</span>(${edit_name })
-				<div id = "interviw_chr">
+			<div id = "interview_box" align="left" style="height: 300px; background: url('/images/egovframework/interview/uploadImg/interview.jpg'); background-size : cover;">
+				<span style = "font-style: bold; font-size: 25px;"> &nbsp;${list.ijob}</span>(${edit_name })
+				<div id = "interviw_chr" style="padding-top: 165px;">
 					<div class="skillbar clearfix " data-percent="${list.iyearofjob*10 }%">
 						<div class="skillbar-title" ><span>경력</span></div>
 						<div class="skillbar-bar" style="background: #e67e22;"></div>

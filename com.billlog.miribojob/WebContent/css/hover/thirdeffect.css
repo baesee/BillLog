@@ -5,7 +5,7 @@
 .third-effect .mask {
    opacity: 0;
    overflow:visible;
-   border:100px solid rgba(0,0,0,0.7);
+   border:150px solid rgba(0,0,0,0.7);
    -moz-box-sizing:border-box;
    -webkit-box-sizing:border-box;
    box-sizing:border-box;
@@ -17,7 +17,8 @@
 }
 .third-effect a.info {
    position:relative;
-   top:-38px;
+   top:-10px;
+   left:-45px;
    opacity: 0;
    -webkit-transition: opacity 0.5s 0s ease-in-out;
    -moz-transition: opacity 0.5s 0s ease-in-out;
@@ -27,7 +28,7 @@
 }
 .third-effect:hover .mask {
    opacity: 1;
-   border:100px solid rgba(0,0,0,0.7);
+   border:150px solid rgba(0,0,0,0.7);
 }
 .third-effect:hover a.info {
 	opacity:1;

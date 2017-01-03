@@ -108,6 +108,7 @@
 										</c:otherwise>
 								   </c:choose><br/>
 						&nbsp;근무지 : ${detailInterview.ijobcity }<br/>
+						&nbsp;부서명 : ${detailInterview.ijobdept }<br/>
 					</li>
 					<c:if test="${question.question1 ne null}">
 						<li><span>${question.question1 }</span><br/>
@@ -150,7 +151,7 @@
 						&nbsp;&nbsp;${detailInterview.ianswer10 }</li>
 					</c:if>
 					<c:if test="${detailInterview.content ne null}">
-						<li><span>▷마지막으로 하고싶은 말</span><br/>
+						<li><span>▷ 마지막으로 후배들에게 해주고 싶은 말씀은?</span><br/>
 						&nbsp;&nbsp;${detailInterview.content }</li>
 					</c:if>						
 				</ul>

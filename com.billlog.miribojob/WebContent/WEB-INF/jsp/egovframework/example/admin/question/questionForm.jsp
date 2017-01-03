@@ -52,6 +52,7 @@
     	}
     	
     	.tbl_title{
+    		padding-left : 5px;
     		color: white;
     	}
     	
@@ -62,7 +63,8 @@
     
     <script type="text/javascript">
     var cnt = 0;
-    var size = "${list_size}";
+    var size = "${list_size+1}";
+    
     $(document).ready(function(){
     	$("#ul_0").show();
     	$("#btn_submit").hide();
@@ -127,15 +129,15 @@
 					<col width="25%"/>
 					<col width="*"/>
 				</colgroup>
-				<tr>
+				<tr >
 					<td class = "tbl_title">이름</td>
-					<td>
+					<td colspan = "3">
 						<form:input path="iname" />
 					</td>
 				</tr>
 				<tr>
 					<td class = "tbl_title">성별</td>
-					<td class = "tbl_title">
+					<td class = "tbl_title" colspan = "3">
 						<form:radiobutton path="isex" value = "m" label="남자"/>
 						<form:radiobutton path="isex" value = "f" label="여자"/>
 					</td>
@@ -145,10 +147,14 @@
 					<td>
 						<form:input path="ijob" />
 					</td>
+					<td class = "tbl_title">부서명</td>
+					<td>
+						<form:input path="ijobdept" />
+					</td>
 				</tr>
 				<tr>
 					<td class = "tbl_title">근무지</td>
-					<td>
+					<td colspan = "3">
 						<form:select path="ijobcity">
 						<form:option value="">선택</form:option>
 						<form:option value="서울특별시">서울특별시</form:option>
@@ -174,7 +180,7 @@
 				</tr>
 				<tr>
 					<td class = "tbl_title">경력(년차)</td>
-					<td>
+					<td colspan = "3" colspan = "3">
 						<form:select path="iyearofjob">
 						<form:option value="">선택</form:option>
 						<form:option value="1">1년차 미만</form:option>
@@ -192,7 +198,7 @@
 				</tr>
 				<tr>
 					<td class = "tbl_title">연봉</td>
-					<td>
+					<td colspan = "3">
 						<form:select path="iyearmoney">
 						<form:option value="35">1500 미만</form:option>
 						<form:option value="40">1800</form:option>
@@ -212,7 +218,7 @@
 				</tr>
 				<tr>
 					<td class = "tbl_title">하루 평균 근무시간 </td>
-					<td>
+					<td colspan = "3">
 						<form:select path="ijobtime">
 						<form:option value="10">4시간 미만</form:option>
 						<form:option value="20">6시간</form:option>
@@ -228,7 +234,7 @@
 				</tr>
 				<tr>
 					<td class = "tbl_title">직업에 대한 만족도</td>
-					<td class = "tbl_title">
+					<td class = "tbl_title" colspan = "3">
 						<form:radiobutton path="imanjokdo" value = "20" label="최하"/>
 						<form:radiobutton path="imanjokdo" value = "40" label="하"/>
 						<form:radiobutton path="imanjokdo" value = "60" label="중"/>
@@ -243,6 +249,10 @@
 					<li style = "color: black;"><form:textarea path="ianswer${status.count }" rows="7" cols="70"></form:textarea></li>
 				</ul>
 			</c:forEach>
+			<ul style=" text-align: left; margin-left: 10px;" id = "ul_${list_size+1 }">
+					<li>${list_size+1 }. 마지막으로 후배님들에게 해주고 싶은 말씀은?</li>
+					<li style = "color: black;"><form:textarea path="content" rows="7" cols="70"></form:textarea></li>
+			</ul>
 			<div id = "btn_box">
 				<button id = "btn_pre" type = "button" style="color: black">이전</button>
 				<button id = "btn_next" type = "button" style="color: black">다음</button>

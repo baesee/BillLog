@@ -1,48 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <title>Sidebar Menu Example</title>
+<meta http-ｅquiv="Content-Type" content="text/html; charset=utf-8" />
+<title>화면중앙정렬</title>
+<style type="text/css">
+   #container {
+    float: left;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    text-align: center; }
+
+#container ul { display: table; margin: auto; padding:0; }	
+
+#container li {
+    float: left;
+    text-align: center;
+	display:inline-block;
+}
+</style>
+
 </head>
-
 <body>
-	<div id="chart1"></div>
-
-	<script type="text/javascript" src="/js/jui/lib/core.js"></script>
-	<script type="text/javascript" src="/js/jui/dist/chart.js"></script>
-	<script type="text/javascript">
-	jui.ready([ "chart.builder" ], function(chart) {
-
-        c = chart("#chart1", {
-            //padding: 100,
-            width: 400,
-            height : 400,
-            theme : "jennifer",
-            axis : {
-                data: []
-            },
-            brush : [{
-                type : "donut",
-                showText : "outside",
-                size : 30,
-                active : [ "red" ],
-                activeEvent : "click",
-                showValue : true
-            }],
-            widget : [{
-                type : "tooltip"
-            }, {
-                type : "legend"
-            }]
-        });
-
-        setTimeout(function() {
-            c.axis(0).update([ { ie: 4, ff: 6 } ]);
-            c.render(true);
-        }, 300);
-    })
-	</script>
+<div id="container" style="border: 1px solid red;">
+<ul>
+<li>AAAA!</li>
+</ul>
+</div>
 </body>
-
 </html>
